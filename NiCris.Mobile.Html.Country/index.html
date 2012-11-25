@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kendo Mobile Demo</title>
+    <link href="http://cdn.kendostatic.com/2012.3.1114/styles/kendo.mobile.all.min.css" rel="stylesheet">
+    <link href="http://cdn.kendostatic.com/2012.3.1114/styles/kendo.common.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="content/css/style.css">
+</head>
+
+<body>
+    <div data-role="layout" data-id="default">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+                <a data-role="button" data-align="right" href="content/about.html" class="nav-button">About</a>
+            </div>
+        </header>
+
+        <footer data-role="footer" data-id="default">
+            <div data-role="tabstrip">
+                <a href="#continents" data-icon="home">Home</a>
+                <a href="content/search.html" data-icon="search">Search</a>
+                <a href="#ratings" data-icon="favorites">Ratings</a>
+                <a href="#account" data-icon="contacts">Account</a>
+            </div>
+        </footer>
+    </div>
+
+    <div data-title="Continents" data-role="view" id="continents" data-url="/" data-layout="default" data-show="showAllContinents">
+        <ul
+            id="continents"
+            class="item-list"
+            data-role="listview"
+            data-template="continentsTemplate"
+            data-source="dsContinents">
+        </ul>
+    </div>
+
+    <div data-title="Details" data-role="view" id="continentDetails" data-transition="slide" data-layout="default" data-show="showContinentDetails">
+        <header data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" data-align="left" class="nav-button">Back</a>
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+
+        <div data-role="content">
+        </div>
+    </div>
+
+    <div data-title="Countries" data-role="view" id="countries" data-transition="slide" data-layout="default" data-show="showCountries">
+        <header data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" data-align="left">Back</a>
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+
+        <div data-role="content">          
+            <ul
+                id="continents"
+                class="item-list"
+                data-role="listview"
+                data-template="countriesTemplate"
+                data-source="dsCountries">
+            </ul>
+        </div>
+    </div>
+
+    <div data-title="Details" data-role="view" id="countryDetails" data-transition="slide" data-layout="default" data-show="showCountryDetails">
+        <header data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" data-align="left">Back</a>
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+
+        <div data-role="content">
+        </div>
+    </div>
+
+    <div data-role="view" id="ratings" data-title="Ratings" data-layout="default">
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                Country Ratings:
+                <ul>
+                    <li data-icon="toprated" style="background-color: #3589e7; color: #fff;">1. USA</li>
+                    <li data-icon="toprated">2. Bulgaria</li>
+                    <li data-icon="toprated">3. France</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div data-role="view" id="account" data-layout="default" data-title="My Account">
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>Account
+                <ul>
+                    <li>Username<span class="list-item-data">userName</span></li>
+                    <li>Email<span class="list-item-data">userName@home.com</span></li>
+                </ul>
+            </li>
+            <li>Notifications
+                <ul>
+                    <li>New products<input type="checkbox" data-role="switch" /></li>
+                    <li>Exclusive promos<input type="checkbox" data-role="switch" checked="checked" /></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <script id="continentsTemplate" type="text/x-kendo-template">
+        <a class="details-link" data-role="listview-link" href="\#countries?continentId=#:id#">
+           <img src="content/images/75/#:image#.jpg" />
+           <h2>#:name#</h2>
+        </a>
+
+        <a data-role="button" data-icon="more" href="\#continentDetails?id=#:id#"></a>        
+    </script>
+
+    <script id="continentDetailsTemplate" type="text/x-kendo-template">
+        <aside>
+            <img src="content/images/200/#:image#.png" />
+            <span>#: details #</span>
+        </aside>
+        <h2>#:name#</h2>
+        <p>#:description#</p>
+    </script>
+
+     <script id="countriesTemplate" type="text/x-kendo-template">
+        <a class="details-link" data-role="listview-link" href="\#countryDetails?id=#:id#">
+           <img src="content/images/48/#:image#" />
+           <h2>#:name#</h2>
+        </a>
+    </script>   
+
+    <script id="countryDetailsTemplate" type="text/x-kendo-template">
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>Cuntry Info
+                <ul>
+                    <li><img src="content/images/48/#:image#" /><h2>#:name#</h2></li>
+                    <li>
+                        <h5>
+                            <span style="color: gray">Capital:</span> #:capital#
+                            <br/><span style="color: gray">Population:</span> #:population#
+                            <br/><span style="color: gray">GDP:</span> #:gdp#
+                        </h5>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </script>    
+
+    <style scoped>
+        #countryDetails img {
+            float: left;
+            margin: 1em;
+            -webkit-box-shadow: 0 1px 3px #333;
+            box-shadow: 0 1px 3px #333;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+        }
+    </style>       
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2012.3.1114/js/kendo.all.min.js"></script>    
+    <script>
+        // The base remote Url
+        var base_url = "http://localhost:55689";
+
+        var app;
+        var schema = {model: {}};
+
+        // *** continents data source
+        var dsContinents = kendo.data.DataSource.create({
+            schema: schema,
+            transport: {
+                read: { 
+                    // url: "content/continents.json", dataType: "json"  
+                    url: base_url + "/api/continent",
+                    dataType: 'jsonp',                  // jsonp is necessary here for cross domain calls, not just json
+                    type: 'GET'
+                }
+
+            },
+            error: function() { console.log(arguments); }
+        });
+
+        dsContinents.fetch();
+
+
+        // *** countries data source
+        var dsCountries = kendo.data.DataSource.create({
+            schema: schema,
+            transport: {
+                read: {
+                    // url: "content/countries.json", dataType: "json"
+                    url: base_url + "/api/country",
+                    dataType: 'jsonp',                  // jsonp is necessary here for cross domain calls, not just json
+                    type: 'GET'
+                } 
+            },
+            error: function() { console.log(arguments); }
+        });
+
+        var dsVisitedCountries = kendo.data.DataSource.create({
+            schema: schema,
+            filter: {
+                field: "visited",
+                operator: "eq",
+                value: true
+            }
+        });
+
+        dsCountries.bind("change", function() {
+            dsVisitedCountries.data(dsCountries.data());
+        });
+
+        dsCountries.fetch();
+
+
+        // *** continents list
+        function showAllContinents(e) {
+            e.view.content.find(".item-list").data("kendoMobileListView").refresh();
+        }
+
+        // continent detail template
+        var itemContinentDetailTemplate = kendo.template($("#continentDetailsTemplate").text());
+
+        function showContinentDetails(e) {
+            var view = e.view;
+
+            dsContinents.fetch(function() {
+                item = dsContinents.get(view.params.id);
+                view.scrollerContent.html(itemContinentDetailTemplate(item));
+                kendo.mobile.init(view.content);
+            });
+        }
+
+
+        // *** countries list
+         function showCountries(e) {
+            var view = e.view;
+            var contId = parseInt(view.params.continentId);
+            dsCountries.filter({ field: "continentId", operator: "eq", value: contId });
+        }       
+
+        // countries detail template
+        var itemCountryDetailTemplate = kendo.template($("#countryDetailsTemplate").text());
+
+        function showCountryDetails(e) {
+            var view = e.view;
+
+            dsCountries.fetch(function() {
+                item = dsCountries.get(view.params.id);
+                view.scrollerContent.html(itemCountryDetailTemplate(item));
+                kendo.mobile.init(view.content);
+            });
+        }       
+
+
+        // *** start the app
+        app = new kendo.mobile.Application($(document.body), { transition: "slide" });
+    </script>
+</body>
+</html>
+

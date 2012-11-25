@@ -1,0 +1,40 @@
+<div data-title="Search" data-role="view" id="search" data-layout="default">
+    <form action="javascript:SearchPage();">
+        <input id="input_search_word" 
+               type="search" 
+               style="width:94%; height: 45px; margin: 8px 3% 8px 3%; padding-left:10px; padding-right:10px;"
+               placeholder="search here..." 
+               autocapitalize="off" 
+               autocorrect="off" />
+    </form>    
+
+    <hr>
+    <div id="searchResults"></div>
+</div>
+
+<script>
+
+// search functions
+function SearchPage() {
+    var search_word = $('#input_search_word').val();
+    
+    $.when ($.getJSON('http://search.twitter.com/search.json?q=' + search_word + '&callback=?'))
+     .then(function (data) {
+
+        // console.log(data);
+        var m = $.map(data.results, function(obj, index) {
+            // console.log(obj.text);     
+            return obj.text;             
+        });
+        
+        $("#searchResults").kendoMobileListView({
+            dataSource: m
+            // template: $("#searchResults-template").text()
+        });
+        
+    });
+
+    document.getElementById("input_search_word").blur();
+}
+
+</script>

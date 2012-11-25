@@ -1,0 +1,124 @@
+[
+    {
+         "id": 1,
+         "continentId": 1,
+         "name": "Sudan",
+         "image": "flag_sudan.png",
+         "capital": "Khartoum",
+         "population": "34,318,385 (2011)",
+         "gdp": "N/A",
+         "visited": true
+    },
+    {
+         "id": 2,
+         "continentId": 1,
+         "name": "Zimbabwe",
+         "image": "flag_zimbabwe.png",
+         "capital": "Harare",
+         "population": "12,754,378 (2011)",
+         "gdp": "9.9 billion USD (2011)",         
+         "visited": true
+    },
+    {
+         "id": 3,
+         "continentId": 2,
+         "name": "Antarctica",
+         "image": "flag_antarctica.png",
+         "capital": "N/A",
+         "population": "N/A",
+         "gdp": "N/A",         
+         "visited": true
+    },
+    {
+         "id": 4,
+         "continentId": 3,         
+         "name": "India",
+         "image": "flag_india.png",
+         "capital": "New Delhi",
+         "population": "> 1.2 billion people",
+         "gdp": "1.848 trillion USD (2011)",            
+         "visited": true
+    },
+    {
+         "id": 5,
+         "continentId": 3,  
+         "name": "North Korea",
+         "image": "flag_north_korea.png",
+         "capital": "Pyongyang",
+         "population": "24,451,285 (2011)",
+         "gdp": "32.7 billion USD (2011)",            
+         "visited": true
+    },
+    {
+         "id": 6,
+         "continentId": 4, 
+         "name": "Australia",
+         "image": "flag_australia.png",
+         "capital": "Canberra",
+         "population": "22,620,600 (2011)",
+         "gdp": "1.372 trillion USD (2011)",            
+         "visited": true
+    },    
+    {
+         "id": 7,
+         "continentId": 5, 
+         "name": "Bulgaria",
+         "image": "flag_bulgaria.png",
+         "capital": "Sofia",
+         "population": "7,476,000 (2011)",
+         "gdp": "53.51 billion USD (2011)",            
+         "visited": true
+    },
+    {
+         "id": 8,
+         "continentId": 5,
+         "name": "France",
+         "image": "flag_france.png",
+         "capital": "Paris",
+         "population": "65,436,552 (2011)",
+         "gdp": "2.773 trillion USD (2011)",            
+         "visited": true
+    },    
+    {
+         "id": 9,
+         "continentId": 6,
+         "name": "USA",
+         "image": "flag_usa.png",
+         "capital": "Washington, D.C.",
+         "population": "314,686,189 (2012)",
+         "gdp": "15.09 trillion USD (2011)",            
+         "visited": true
+    },
+    {
+         "id": 10,
+         "continentId": 6,
+         "name": "Mexico",
+         "image": "flag_mexico.png",
+         "capital": "Mexico City",
+         "population": "114,793,341 (2011)",
+         "gdp": "1.155 trillion USD (2011)",            
+         "visited": true
+    },
+    {
+         "id": 11,
+         "continentId": 7,
+         "name": "Brazil",
+         "image": "flag_brazil.png",
+         "capital": "Brasília",
+         "population": "196,655,014 (2011)",
+         "gdp": "2.477 trillion USD (2011)",            
+         "visited": true
+    },
+    {
+         "id": 12,
+         "continentId": 7,
+         "name": "Argentina",
+         "image": "flag_argentina.png",
+         "capital": "Buenos Aires",
+         "population": "40,764,561 (2011)",
+         "gdp": "446 billion USD (2011)",            
+         "visited": true
+    }          
+]
+
+

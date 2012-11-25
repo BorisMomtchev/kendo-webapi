@@ -1,0 +1,92 @@
+<div data-role="view" id="about" data-transition="overlay:up">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-role="backbutton" data-align="left">Back</a>
+            <span data-role="view-title">About</span>
+        </div>
+    </header>
+
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>About Us
+            <ul>
+                <li><h2><span>NiCris™</span><span style="color: gray; font-size: small">All Rights Reserved.<span></h2><img src="content/images/carine.jpg" /></li>
+            </ul>
+        </li>
+
+        <li>Contact Us
+            <ul>
+                <li>123 Main St, SLP, MN 55432</li>
+                <li>123-456-7788</li>
+            </ul>
+        </li>
+
+        <li>Feedback
+            <form id="feedback" action="./index.html">
+                <ul data-role="listview" >
+                    <li>Subject<input id="subjectId" type="text"/></li>
+                    <li>Message<textarea id="messageId"></textarea></li>
+                </ul>
+
+                <br/>    
+                <i></i><a data-role="button" data-icon="featured" data-click="submitFeedback">Submit</a>
+            </form>
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    function submitFeedback() {
+        // console.log( $("#subjectId").val() );
+        // console.log( $("#messageId").val() );
+
+        $("#feedback").submit();
+
+        /*
+        $("#feedback").submit( function () {
+          console.log("#subject").val();
+          console.log("#message").val();
+        });
+        */
+    }
+</script>
+
+<style scoped>
+    #about li {
+        color: #4C4C4C;
+    }
+    #about h2 {
+        display: inline-block;
+        font-size: 1.1em;
+        margin: 1.5em 0 0 1em;
+    }
+    #about h2 span {
+        display: block;
+        clear: both;
+        font-size: 2em;
+        margin: .2em 0 0 0;
+    }
+    #about img {
+        width: 5em;
+        height: 5em;
+        float: left;
+        margin: 1em;
+        -webkit-box-shadow: 0 1px 3px #333;
+        box-shadow: 0 1px 3px #333;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+    }
+    #about input {
+        border: 1px dotted gray;
+    }   
+    #about textarea {
+        border: 1px dotted gray;
+    } 
+
+    /* overrite */
+    .km-list > li, .km-root .km-listview-link, .km-root .km-listview-label {
+        padding: 0.5em;
+    }
+
+
+</style>
