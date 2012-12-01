@@ -1,7 +1,7 @@
-using System.Web.Http;
+﻿using System.Web.Http;
 using Microsoft.Practices.Unity;
 
-namespace NiCris.WebAPI
+namespace $rootnamespace$
 {
     public static class Bootstrapper
     {
